@@ -1,0 +1,17 @@
+<!-- 成功，将在两秒后跳转 -->
+
+{% extends 'base.html' %}
+
+{% block title %}success{% endblock title %}success
+
+{% block content %}
+    <div class="page-content">
+        <div class="container-fluid">
+            <h1 style="text-align:center;">上传成功！</h1>
+            <h3 style="text-align:center;">页面将在两秒后跳转，请耐心等待...</h3>
+        </div>
+    </div>
+    <script>
+        setTimeout('window.location="show_csv"',2000)
+    </script>
+{% endblock%}

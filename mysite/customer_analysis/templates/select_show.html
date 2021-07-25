@@ -1,0 +1,33 @@
+<!-- 选择索引并提交 -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-content">
+        <div class="container-fluid" style="padding-left:300px; padding-right:300px; margin-top: 300px;">
+            <form action="final" method="post" onsubmit="return myFunction()" enctype="multpart/form-data">
+                <div class="form-floating" >
+                    <textarea class="form-control" name="number" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">请输入预测客户的编号：（0~7042）</label>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary" type="submit" >提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var x, text;
+            // 获取 id="numb" 的值
+            x = document.getElementById("floatingTextarea").value;
+            // 如果输入的值 x 不是数字或者小于 1 或者大于 10，则提示错误 Not a Number or less than one or greater than 10
+            if (isNaN(x) || x < 0 || x > 7042) {
+                alert("输入错误，请输入合法内容！");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+</script>
+{% endblock %}

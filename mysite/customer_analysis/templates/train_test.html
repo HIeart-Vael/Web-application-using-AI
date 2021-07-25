@@ -1,0 +1,30 @@
+<!-- 显示训练集、测试集、目标结果的通用模板 -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td align="center" class="biaoti" height="60">{{title}}</td>
+      </tr>
+      <tr>
+        <td class="showtime" align="right" height="25">
+          <div id="datetime">
+            <script>
+                setInterval("document.getElementById('datetime').innerHTML=moment().format('MMMM Do, h:mm:ss a');", 1000);
+            </script>
+          </div>
+        </td>
+
+      </tr>
+    </table>
+    <div class="container" style=" overflow:scroll; width:1520px; height:630px;">
+        {{data | safe}}
+    </div>
+</div>
+{% endblock %}

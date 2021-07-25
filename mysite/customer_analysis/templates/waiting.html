@@ -1,0 +1,16 @@
+<!-- 模型训练中，等待 -->
+{% extends 'base.html' %}
+
+{% block title %}success{% endblock title %}success
+
+{% block content %}
+    <div class="page-content">
+        <div class="container-fluid">
+            <h1 style="text-align:center;">Waiting...</h1>
+            <h3 style="text-align:center;">模型训练中，请耐心等待...</h3>
+        </div>
+    </div>
+    <script>
+        setTimeout('window.location="Logistic_Regression"',300)
+    </script>
+{% endblock%}

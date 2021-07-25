@@ -1,0 +1,16 @@
+<!-- 目标变量分析图 -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container" style="padding:100px 0px 0px 300px;">
+        <div class="row" style="background-color:lavender;">
+            <div class="col-sm-6">
+                {{bar|safe}}
+            </div>
+            <div class="col-sm-6">
+                {{pie|safe}}
+            </div>
+        </div>
+    </div>
+{% endblock%}

@@ -1,0 +1,54 @@
+<!-- 主页面 -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/styles.imageuploader.css' %}" type="text/css">
+{% endblock %}
+
+{% block title %}home{% endblock %}
+
+{% block content %}
+    <div class="page-content">
+        <div class="container-fluid">
+            
+            <h1 style="text-align:center;">Welcome to our group presentation</h1>
+
+            <div class="jq22-container">
+                <section role="main" class="l-main" style="margin-top:50px;margin-bottom:50px;">
+                    <header class="site-header">
+                        <h1 class="site-title l-site-title" style="font-size:1.2em;">点击表单上传您需要分析的数据</h1>
+                    </header>
+                    <div class="uploader__box js-uploader__box l-center-box">
+                        <form action="#" method="POST">
+                            <div class="uploader__contents">
+                                <label class="button button--secondary" for="fileinput">请选择文件</label>
+                                <input id="fileinput" class="uploader__file-input" type="file" multiple value="Select Files">
+                            </div>
+                            <input class="button button--big-bottom" type="submit" value="Upload Selected Files">
+                        </form>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div><!-- page-content" -->
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/jquery.imageuploader.js'%}"></script>
+	<script>
+        alert("{{alert}}");
+		(function(){
+	            var options = {};
+	            $('.js-uploader__box').uploader({
+	            	'selectButtonCopy':'请选择或拖拽文件',
+	            	'instructionsCopy':'你可以选择或拖拽多个文件',
+	            	'submitButtonCopy':'上传选择的文件',
+	            	'furtherInstructionsCopy':'你可以选择或拖拽更多的文件',
+	            	'secondarySelectButtonCopy':'选择更多的文件'
+	            });
+	        }());
+	</script>
+{% endblock %}

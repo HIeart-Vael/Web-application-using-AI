@@ -1,0 +1,36 @@
+<!-- 最终页面 模型测试 -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td align="center" class="biaoti" height="60"> 数据表单 </td>
+      </tr>
+      <tr>
+        <td class="showtime" align="right" height="25">
+          <div id="datetime">
+            <script>
+                setInterval("document.getElementById('datetime').innerHTML=moment().format('MMMM Do, h:mm:ss a');", 1000);
+            </script>
+          </div>
+        </td>
+
+      </tr>
+    </table>
+    <div class="container" style=" overflow:scroll;height:200px;">
+    {% autoescape off %}
+        {{table_input}}
+    {% endautoescape %}
+    </div>
+</div>
+<div style="margin-top:100px;">
+    <h3 style="text-align:center;">系统预测该客户可能的流失情况为：{{output}}</h3>
+    <h3 style="text-align:center;">该样本真实的流失情况为：{{right_val}}</h3>
+</div>
+{% endblock %}
